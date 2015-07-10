@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     func checkState(){
         println("turn on");
-        let url = NSURL(string: "http://82.173.196.214/cgi-bin/json.cgi?get=state")
+        let url = NSURL(string: "ip-adress/cgi-bin/json.cgi?get=state")
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             var out = NSString(data: data, encoding: NSUTF8StringEncoding);
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
    
     func switchLight(set: String){
-        let url = NSURL(string: "http://82.173.196.214/cgi-bin/json.cgi?set="+set)
+        let url = NSURL(string: "ip-adress/cgi-bin/json.cgi?set="+set)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             println(NSString(data: data, encoding: NSUTF8StringEncoding))
